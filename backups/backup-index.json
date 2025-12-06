@@ -1,0 +1,237 @@
+{
+  "sections": {
+    "iskcon-hero": {
+      "type": "iskcon-hero",
+      "settings": {
+        "deity_image_1": "shopify:\/\/shop_images\/nitai-gauranga.png",
+        "deity_image_2": "shopify:\/\/shop_images\/radha-krishna.png",
+        "deity_image_3": "shopify:\/\/shop_images\/rama-sita.png"
+      }
+    },
+    "featured-categories": {
+      "type": "collection-list",
+      "blocks": {
+        "cat1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "puja-items"
+          }
+        },
+        "cat2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "books-media-1"
+          }
+        },
+        "cat3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "garlands-malas"
+          }
+        },
+        "cat4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "health-wellness-1"
+          }
+        },
+        "cat5": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "plants-garden"
+          }
+        },
+        "cat6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "catering-food"
+          }
+        },
+        "cat7": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "financial-services"
+          }
+        },
+        "cat8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "education-services"
+          }
+        },
+        "cat9": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "music-lessons"
+          }
+        },
+        "cat10": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "yoga-wellness"
+          }
+        }
+      },
+      "block_order": [
+        "cat1",
+        "cat2",
+        "cat3",
+        "cat4",
+        "cat5",
+        "cat6",
+        "cat7",
+        "cat8",
+        "cat9",
+        "cat10"
+      ],
+      "settings": {
+        "title": "Shop by Category",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 5,
+        "color_scheme": "background-1",
+        "show_view_all": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "featured-products": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Featured Products",
+        "heading_size": "h1",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "all",
+        "products_to_show": 12,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": true,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "background-2",
+        "image_ratio": "square",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_rating": false,
+        "enable_quick_add": true,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "featured-sellers": {
+      "type": "collection-list",
+      "blocks": {
+        "s1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "govinda-books"
+          }
+        },
+        "s2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "vrindavan-garlands"
+          }
+        },
+        "s3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "deity-seva-store"
+          }
+        },
+        "s4": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "prabhu-pizza"
+          }
+        },
+        "s5": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "govindas-catering"
+          }
+        },
+        "s6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "tulsi-nursery"
+          }
+        },
+        "s7": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "ayur-wellness"
+          }
+        },
+        "s8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "artha-financial-wisdom"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7",
+        "s8"
+      ],
+      "settings": {
+        "title": "Our Sellers",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "background-1",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": false,
+        "padding_top": 40,
+        "padding_bottom": 20
+      }
+    },
+    "sellers-cta": {
+      "type": "rich-text",
+      "blocks": {
+        "btn": {
+          "type": "button",
+          "settings": {
+            "button_label": "View All Sellers",
+            "button_link": "\/pages\/sellers",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "btn"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": false,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "iskcon-hero",
+    "featured-categories",
+    "featured-products",
+    "featured-sellers",
+    "sellers-cta"
+  ]
+}
