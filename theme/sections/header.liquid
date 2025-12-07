@@ -698,7 +698,7 @@
       </details-modal>
 
       <div class="header__icons">
-        <a href="/pages/become-a-seller" class="header__icon header__icon--seller link focus-inset" style="display:inline-flex;align-items:center;padding:6px 12px;background:#FF9933;color:white;text-decoration:none;border-radius:4px;font-size:12px;font-weight:600;margin-right:8px;">Become a Seller</a>
+        <a href="/pages/become-a-seller" class="header__icon--seller" style="display:inline-flex !important;align-items:center;padding:6px 12px !important;background:#FF9933 !important;color:white !important;text-decoration:none !important;border-radius:4px;font-size:12px;font-weight:600;margin-right:8px;">Become a Seller</a>
 
         {%- if shop.customer_accounts_enabled -%}
           <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
