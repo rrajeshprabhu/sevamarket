@@ -21,112 +21,69 @@ if (!ACCESS_TOKEN) {
     process.exit(1);
 }
 
-// Reorganized page - CTA above fold, eligibility guidelines at bottom
+// Compact page - no duplicate heading, tighter layout
 const pageContent = `
-<div style="max-width: 900px; margin: 0 auto; padding: 20px;">
+<div style="max-width: 900px; margin: 0 auto; padding: 10px 20px;">
 
-  <!-- Hero Section with CTA - Above the Fold -->
-  <div style="text-align: center; background: linear-gradient(135deg, #FF9933 0%, #FF6600 100%); padding: 40px 30px; border-radius: 12px; margin-bottom: 30px; color: white;">
-    <h1 style="margin: 0 0 15px 0; font-size: 32px; color: white;">Become a Seller</h1>
-    <p style="font-size: 18px; margin-bottom: 25px; opacity: 0.95;">
+  <!-- Hero Section - Compact, no duplicate title -->
+  <div style="text-align: center; background: linear-gradient(135deg, #FF9933 0%, #FF6600 100%); padding: 25px; border-radius: 10px; margin-bottom: 20px; color: white;">
+    <p style="font-size: 17px; margin: 0 0 15px 0; opacity: 0.95;">
       Join our community of sellers offering meaningful products to conscious buyers.
     </p>
-    <a href="/apps/marketplace/seller/signup" style="display: inline-block; background: white; color: #FF6600; padding: 16px 40px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Apply Now</a>
+    <a href="/apps/marketplace/seller/signup" style="display: inline-block; background: white; color: #FF6600; padding: 12px 35px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 16px;">Apply Now</a>
   </div>
 
-  <!-- Quick Benefits - 3 Column -->
-  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px;">
-    <div style="text-align: center; padding: 20px;">
-      <div style="font-size: 36px; margin-bottom: 10px;">🛒</div>
-      <h3 style="color: #333; margin: 0 0 8px 0; font-size: 16px;">Easy Setup</h3>
-      <p style="color: #666; margin: 0; font-size: 14px;">Start selling in minutes</p>
-    </div>
-    <div style="text-align: center; padding: 20px;">
-      <div style="font-size: 36px; margin-bottom: 10px;">💰</div>
-      <h3 style="color: #333; margin: 0 0 8px 0; font-size: 16px;">Low Fees</h3>
-      <p style="color: #666; margin: 0; font-size: 14px;">Keep more of what you earn</p>
-    </div>
-    <div style="text-align: center; padding: 20px;">
-      <div style="font-size: 36px; margin-bottom: 10px;">🤝</div>
-      <h3 style="color: #333; margin: 0 0 8px 0; font-size: 16px;">Community</h3>
-      <p style="color: #666; margin: 0; font-size: 14px;">Reach conscious buyers</p>
-    </div>
-  </div>
+  <!-- Quick Benefits + How It Works - Side by Side -->
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
 
-  <!-- How It Works -->
-  <div style="background: #f9f9f9; padding: 25px; border-radius: 10px; margin-bottom: 30px;">
-    <h2 style="color: #333; margin-top: 0; text-align: center;">How It Works</h2>
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; text-align: center;">
-      <div>
-        <div style="background: #FF9933; color: white; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 10px;">1</div>
-        <p style="color: #333; margin: 0; font-size: 14px;"><strong>Apply</strong><br><span style="color: #666;">Fill out the form</span></p>
-      </div>
-      <div>
-        <div style="background: #FF9933; color: white; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 10px;">2</div>
-        <p style="color: #333; margin: 0; font-size: 14px;"><strong>Review</strong><br><span style="color: #666;">1-2 business days</span></p>
-      </div>
-      <div>
-        <div style="background: #FF9933; color: white; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 10px;">3</div>
-        <p style="color: #333; margin: 0; font-size: 14px;"><strong>Setup</strong><br><span style="color: #666;">Add your products</span></p>
-      </div>
-      <div>
-        <div style="background: #FF9933; color: white; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 10px;">4</div>
-        <p style="color: #333; margin: 0; font-size: 14px;"><strong>Sell</strong><br><span style="color: #666;">Go live!</span></p>
+    <!-- Quick Benefits -->
+    <div style="background: #f9f9f9; padding: 15px 20px; border-radius: 8px;">
+      <h3 style="margin: 0 0 12px 0; font-size: 16px; color: #333;">Why Sell With Us</h3>
+      <div style="font-size: 13px; color: #333; line-height: 1.8;">
+        <div>✓ Reach conscious community buyers</div>
+        <div>✓ Easy-to-use seller dashboard</div>
+        <div>✓ Low commission rates</div>
+        <div>✓ Secure payment processing</div>
+        <div>✓ Marketing support</div>
       </div>
     </div>
-  </div>
 
-  <!-- Seller Benefits -->
-  <div style="background: #E8F5E9; padding: 25px; border-radius: 10px; margin-bottom: 30px;">
-    <h2 style="color: #2E7D32; margin-top: 0;">Seller Benefits</h2>
-    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
-      <div style="color: #333; padding: 8px 0;">✓ Access to conscious community buyers</div>
-      <div style="color: #333; padding: 8px 0;">✓ Easy-to-use seller dashboard</div>
-      <div style="color: #333; padding: 8px 0;">✓ Secure payment processing</div>
-      <div style="color: #333; padding: 8px 0;">✓ Seller support and guidance</div>
-      <div style="color: #333; padding: 8px 0;">✓ Marketing support for your products</div>
-      <div style="color: #333; padding: 8px 0;">✓ Low commission rates</div>
+    <!-- How It Works -->
+    <div style="background: #f9f9f9; padding: 15px 20px; border-radius: 8px;">
+      <h3 style="margin: 0 0 12px 0; font-size: 16px; color: #333;">How It Works</h3>
+      <div style="font-size: 13px; color: #333; line-height: 1.8;">
+        <div><span style="background: #FF9933; color: white; padding: 1px 7px; border-radius: 50%; font-size: 11px; margin-right: 8px;">1</span> Apply - Fill out the form</div>
+        <div><span style="background: #FF9933; color: white; padding: 1px 7px; border-radius: 50%; font-size: 11px; margin-right: 8px;">2</span> Review - 1-2 business days</div>
+        <div><span style="background: #FF9933; color: white; padding: 1px 7px; border-radius: 50%; font-size: 11px; margin-right: 8px;">3</span> Setup - Add your products</div>
+        <div><span style="background: #FF9933; color: white; padding: 1px 7px; border-radius: 50%; font-size: 11px; margin-right: 8px;">4</span> Sell - Go live!</div>
+      </div>
     </div>
   </div>
 
   <!-- Second CTA -->
-  <div style="text-align: center; padding: 20px; margin-bottom: 30px;">
-    <a href="/apps/marketplace/seller/signup" style="display: inline-block; background: #FF9933; color: white; padding: 16px 40px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 18px;">Apply to Become a Seller</a>
-    <p style="color: #888; margin-top: 15px; font-size: 14px;">
+  <div style="text-align: center; padding: 15px; margin-bottom: 20px; background: #E8F5E9; border-radius: 8px;">
+    <a href="/apps/marketplace/seller/signup" style="display: inline-block; background: #FF9933; color: white; padding: 12px 35px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 15px;">Apply to Become a Seller</a>
+    <p style="color: #666; margin: 10px 0 0 0; font-size: 13px;">
       Questions? <a href="mailto:support@seva-marketplace.com" style="color: #FF9933;">Contact us</a>
     </p>
   </div>
 
-  <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">
+  <!-- Eligibility Guidelines - Collapsible style, more compact -->
+  <details style="background: linear-gradient(135deg, #FFF8E7 0%, #FFF5E0 100%); padding: 15px 20px; border-radius: 8px; border-left: 4px solid #FF9933;">
+    <summary style="cursor: pointer; font-weight: bold; color: #8B4513; font-size: 15px; margin-bottom: 10px;">Seller Eligibility Guidelines (click to expand)</summary>
 
-  <!-- Eligibility Guidelines - Moved to Bottom -->
-  <div style="background: linear-gradient(135deg, #FFF8E7 0%, #FFF5E0 100%); padding: 30px; border-radius: 10px; border-left: 4px solid #FF9933;">
-    <h2 style="color: #8B4513; margin-top: 0;">Seller Eligibility Guidelines</h2>
-    <p style="color: #555;">To maintain the quality of our marketplace, all products and services should align with our community values:</p>
+    <div style="margin-top: 15px;">
+      <h4 style="color: #2E7D32; margin: 0 0 8px 0; font-size: 14px;">✓ Approved Products & Services</h4>
+      <p style="color: #333; margin: 0 0 15px 0; font-size: 13px; line-height: 1.6;">
+        Sattvic Foods • Puja Items • Devotional Books & Media • Garlands & Flowers • Tulsi & Sacred Plants • Ayurvedic Products • Traditional Clothing • Yoga/Music Classes • Cruelty-free Products
+      </p>
 
-    <h3 style="color: #2E7D32; margin-top: 20px;">Approved Products & Services</h3>
-    <ul style="color: #333; line-height: 1.8;">
-      <li><strong>Sattvic Foods</strong> - Pure vegetarian items prepared without onion, garlic, or intoxicants</li>
-      <li><strong>Puja Items</strong> - Incense, lamps, deity items, altar accessories</li>
-      <li><strong>Devotional Books & Media</strong> - Scriptures, kirtans, lectures, educational materials</li>
-      <li><strong>Garlands & Flowers</strong> - Fresh and dried flower malas for worship</li>
-      <li><strong>Tulsi & Sacred Plants</strong> - Tulsi plants, seeds, and related items</li>
-      <li><strong>Ayurvedic Products</strong> - Natural wellness products, herbs, oils</li>
-      <li><strong>Clothing & Accessories</strong> - Traditional wear, japa beads, kanthi malas</li>
-      <li><strong>Services</strong> - Music lessons, yoga classes, spiritual counseling, education</li>
-      <li><strong>Ahimsa Products</strong> - Cruelty-free, non-violent products only</li>
-    </ul>
-
-    <h3 style="color: #C62828; margin-top: 25px;">Not Permitted</h3>
-    <ul style="color: #333; line-height: 1.8;">
-      <li><strong>Non-Vegetarian Items</strong> - No meat, fish, eggs, or products containing these</li>
-      <li><strong>Onion & Garlic</strong> - No products containing onion or garlic</li>
-      <li><strong>Intoxicants</strong> - No alcohol, tobacco, caffeine (coffee/tea), or recreational drugs</li>
-      <li><strong>Gambling Related</strong> - No lottery, betting, or gambling products</li>
-      <li><strong>Leather & Animal Products</strong> - No leather goods or products harming animals</li>
-      <li><strong>Inappropriate Content</strong> - Nothing promoting violence or illicit activities</li>
-    </ul>
-  </div>
+      <h4 style="color: #C62828; margin: 0 0 8px 0; font-size: 14px;">✗ Not Permitted</h4>
+      <p style="color: #333; margin: 0; font-size: 13px; line-height: 1.6;">
+        Non-vegetarian items • Onion & Garlic • Intoxicants (alcohol, tobacco, caffeine) • Gambling products • Leather & animal products • Inappropriate content
+      </p>
+    </div>
+  </details>
 
 </div>
 `;
@@ -177,7 +134,7 @@ async function main() {
     try {
         const PAGE_ID = 128205553889; // become-a-seller page ID
 
-        console.log('Updating Become a Seller page...');
+        console.log('Updating Become a Seller page (compact version)...');
         const result = await updatePage(PAGE_ID, pageContent);
 
         if (result.status === 200) {
