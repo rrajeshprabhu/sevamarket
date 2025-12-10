@@ -1,0 +1,29 @@
+{
+  "sections": {
+    "hero": {
+      "type": "image-banner",
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "desktop_content_position": "middle-left",
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
+    "category-carousels": {
+      "type": "category-carousels",
+      "settings": {
+        "heading": "Shop by Category",
+        "products_per_category": 12
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "category-carousels"
+  ]
+}

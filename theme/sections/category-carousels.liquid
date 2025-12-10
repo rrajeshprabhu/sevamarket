@@ -1,0 +1,426 @@
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
+
+<style>
+  .category-page-hero {
+    background: linear-gradient(135deg, #fff8e7 0%, #fef3d8 50%, #fff8e7 100%);
+    padding: 48px 0;
+    margin-bottom: 0;
+    text-align: center;
+  }
+
+  .category-page-hero__subtitle {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #8B4513;
+    margin-bottom: 12px;
+  }
+
+  .category-page-hero__title {
+    font-size: 36px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 16px 0;
+  }
+
+  .category-page-hero__description {
+    font-size: 16px;
+    color: #555;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  /* Search and Filter Bar */
+  .category-search-bar {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .category-search-bar__input-wrapper {
+    flex: 1;
+    min-width: 250px;
+    position: relative;
+  }
+
+  .category-search-bar__input {
+    width: 100%;
+    padding: 12px 16px 12px 44px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+  }
+
+  .category-search-bar__input:focus {
+    border-color: #8B4513;
+  }
+
+  .category-search-bar__icon {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+  }
+
+  .category-search-bar__filters {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .category-search-bar__filter {
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+  }
+
+  .category-search-bar__filter:hover {
+    border-color: #8B4513;
+  }
+
+  .category-search-bar__filter.active {
+    background: #8B4513;
+    color: white;
+    border-color: #8B4513;
+  }
+
+  .category-carousels {
+    padding: 40px 0;
+    background: #f8f7f5;
+  }
+
+  .category-carousel {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+
+  .category-carousel__header {
+    margin-bottom: 16px;
+  }
+
+  .category-carousel__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin: 0 0 4px 0;
+  }
+
+  .category-carousel__subtitle {
+    font-size: 13px;
+    color: #666;
+    margin: 0;
+  }
+
+  .category-carousel__products {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 8px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .category-carousel__products::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-carousel__item {
+    flex: 0 0 180px;
+    min-width: 180px;
+  }
+
+  .category-product-card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    background: linear-gradient(145deg, #fffaf5 0%, #fff8f0 100%);
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid rgba(139, 69, 19, 0.08);
+    box-shadow: 0 2px 8px rgba(139, 69, 19, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  }
+
+  .category-product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(139, 69, 19, 0.12);
+    border-color: rgba(139, 69, 19, 0.15);
+  }
+
+  .category-product-card__image {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #f5f5f5;
+    margin-bottom: 10px;
+  }
+
+  .category-product-card__title {
+    font-size: 13px;
+    font-weight: 500;
+    color: #333;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .category-product-card__price {
+    font-size: 14px;
+    font-weight: 600;
+    color: #8B4513;
+  }
+
+  .category-product-card__vendor {
+    font-size: 11px;
+    color: #888;
+    margin-top: 4px;
+  }
+
+  .category-carousel__wrapper {
+    position: relative;
+  }
+
+  .category-carousel__nav {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 2;
+  }
+
+  .category-carousel__nav:hover {
+    background: #f5f5f5;
+  }
+
+  .category-carousel__nav svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Empty state */
+  .category-carousel--empty {
+    display: none;
+  }
+
+  @media (max-width: 749px) {
+    .category-carousel {
+      padding: 16px 20px;
+      margin: 0 -15px 16px -15px;
+      border-radius: 0;
+    }
+
+    .category-carousel__item {
+      flex: 0 0 140px;
+      min-width: 140px;
+    }
+  }
+</style>
+
+<!-- Hero Section -->
+<div class="category-page-hero">
+  <div class="page-width">
+    <p class="category-page-hero__subtitle">Seva Sethu Marketplace</p>
+    <h1 class="category-page-hero__title">{{ section.settings.heading }}</h1>
+    <p class="category-page-hero__description">{{ section.settings.description }}</p>
+  </div>
+</div>
+
+<div class="category-carousels page-width">
+
+  <!-- Search and Filter Bar -->
+  <div class="category-search-bar">
+    <div class="category-search-bar__input-wrapper">
+      <svg class="category-search-bar__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="M21 21l-4.35-4.35"/>
+      </svg>
+      <input type="text" class="category-search-bar__input" id="productSearch" placeholder="Search products..." onkeyup="filterProducts()">
+    </div>
+    <div class="category-search-bar__filters">
+      <button class="category-search-bar__filter active" onclick="filterByCategory('all', this)">All</button>
+      {% for collection in collections %}
+        {% if collection.all_products_count > 0 and collection.handle != 'frontpage' and collection.handle != 'all' %}
+          <button class="category-search-bar__filter" onclick="filterByCategory('{{ collection.handle }}', this)">{{ collection.title }}</button>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  {% comment %} Loop through all collections that have products {% endcomment %}
+  {% assign category_collections = collections | where: 'all_products_count', 0 | map: 'id' %}
+
+  {% for collection in collections %}
+    {% if collection.all_products_count > 0 and collection.handle != 'frontpage' and collection.handle != 'all' %}
+      <div class="category-carousel" data-collection="{{ collection.handle }}">
+        <div class="category-carousel__header">
+          <h3 class="category-carousel__title">{{ collection.title }}</h3>
+          {% if collection.description != blank %}
+            <p class="category-carousel__subtitle">{{ collection.description | strip_html | truncate: 80 }}</p>
+          {% endif %}
+        </div>
+
+        <div class="category-carousel__wrapper">
+          <div class="category-carousel__products" id="carousel-{{ collection.handle }}">
+            {% for product in collection.products limit: 12 %}
+              <div class="category-carousel__item">
+                <a href="{{ product.url }}" class="category-product-card">
+                  {% if product.featured_image %}
+                    <img
+                      src="{{ product.featured_image | image_url: width: 400 }}"
+                      alt="{{ product.title | escape }}"
+                      class="category-product-card__image"
+                      loading="lazy"
+                    >
+                  {% else %}
+                    <div class="category-product-card__image" style="background: #e0e0e0;"></div>
+                  {% endif %}
+                  <h4 class="category-product-card__title">{{ product.title }}</h4>
+                  <p class="category-product-card__price">{{ product.price | money }}</p>
+                  {% if product.vendor %}
+                    <p class="category-product-card__vendor">by {{ product.vendor }}</p>
+                  {% endif %}
+                </a>
+              </div>
+            {% endfor %}
+          </div>
+
+          {% if collection.products.size > 4 %}
+            <button class="category-carousel__nav" onclick="scrollCarousel('carousel-{{ collection.handle }}')" aria-label="Next">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+              </svg>
+            </button>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<script>
+  function scrollCarousel(carouselId) {
+    const carousel = document.getElementById(carouselId);
+    if (carousel) {
+      carousel.scrollBy({ left: 400, behavior: 'smooth' });
+    }
+  }
+
+  function filterProducts() {
+    const searchTerm = document.getElementById('productSearch').value.toLowerCase();
+    const productCards = document.querySelectorAll('.category-product-card');
+    const carousels = document.querySelectorAll('.category-carousel');
+
+    productCards.forEach(card => {
+      const title = card.querySelector('.category-product-card__title').textContent.toLowerCase();
+      const item = card.closest('.category-carousel__item');
+      if (title.includes(searchTerm)) {
+        item.style.display = '';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+
+    // Hide empty carousels
+    carousels.forEach(carousel => {
+      const visibleItems = carousel.querySelectorAll('.category-carousel__item:not([style*="display: none"])');
+      if (visibleItems.length === 0) {
+        carousel.style.display = 'none';
+      } else {
+        carousel.style.display = '';
+      }
+    });
+  }
+
+  function filterByCategory(category, btn) {
+    const carousels = document.querySelectorAll('.category-carousel');
+    const filters = document.querySelectorAll('.category-search-bar__filter');
+
+    // Update active button
+    filters.forEach(f => f.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Show/hide carousels
+    carousels.forEach(carousel => {
+      if (category === 'all' || carousel.dataset.collection === category) {
+        carousel.style.display = '';
+      } else {
+        carousel.style.display = 'none';
+      }
+    });
+
+    // Reset search and show all items
+    document.getElementById('productSearch').value = '';
+    document.querySelectorAll('.category-carousel__item').forEach(item => {
+      item.style.display = '';
+    });
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Category Carousels",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Page Heading",
+      "default": "Something for Everyone"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Page Description",
+      "default": "Discover products and services from our trusted community of devotee vendors. From spiritual items to everyday essentials, find everything you need."
+    },
+    {
+      "type": "range",
+      "id": "products_per_category",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "default": 12,
+      "label": "Products per category"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Category Carousels"
+    }
+  ]
+}
+{% endschema %}

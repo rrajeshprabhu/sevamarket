@@ -1,0 +1,14 @@
+{
+  "sections": {
+    "seller-carousels": {
+      "type": "seller-carousels",
+      "settings": {
+        "heading": "Our Community Sellers",
+        "description": "Meet the trusted vendors from our temple community offering products and services with devotion and care."
+      }
+    }
+  },
+  "order": [
+    "seller-carousels"
+  ]
+}
